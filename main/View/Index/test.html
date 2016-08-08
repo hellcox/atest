@@ -1,0 +1,41 @@
+<!-- 显示内容 -->
+<p class="t_title">Jqury 实现动态更新Select标签</p>
+<hr class="thr">
+<span>类型：</span>
+<select name="type" id="type">
+    <option value="">请选择</option>
+    <option value="1">类型1</option>
+    <option value="2">类型2</option>
+</select>
+<span>用户名：</span>
+<select name="user" id="user">
+    <option value="">请选择</option>
+</select>
+<!-- js内容 -->
+<script>
+$("[name='type']").change(function() {
+    var type = document.getElementById('type').value;
+    // alert(type);
+    $.post("<?php echo arU('Index/ajax') ?>", {
+            type: type,
+        },
+        function(res) {
+            var res = eval(res);
+            var sel = document.getElementById('user');
+            sel.options.length = 0; //清空原来的项，如果不想清空去掉这句
+            if (res.length == 0) {
+                sel.options.add(new Option('请选择', ''))
+            } else {
+                for (var i = 0; i < res.length; i++) {
+                    sel.options.add(new Option(res[i].name, res[i].uid));
+                }
+            }
+        });
+});
+</script>
+<!-- 测试内容 -->
+<pre>
+<?php 
+// var_dump($res);
+?>
+</pre>
