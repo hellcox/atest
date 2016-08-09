@@ -1,0 +1,16 @@
+<div class="top">
+    <p class="t_title">注册</p>
+    <hr class="thr">
+</div>
+<div class="con">
+    <form action="<?php echo arU('Account/register'); ?>" method="post">
+        <span>用户名：</span>
+        <input type="text" name="name">
+        <span>密码：</span>
+        <input type="password" name="password">
+        <span>确认密码：</span>
+        <input type="password" name="check_password">
+        <input type="submit" value="注册">
+    </form>
+    <a href="<?php echo arU('Account/login'); ?>">登录</a>
+</div>

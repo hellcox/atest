@@ -1,8 +1,8 @@
 <?php
 /**
  * Controller
- * Name:A-模板文件
- * Auth:lx
+ * Author:lx
+ * Name:模板文件
  */
 class AController extends BaseController
 {
@@ -17,7 +17,6 @@ class AController extends BaseController
     public function indexAction()
     {
         $this->display();
-
     }
 
 }

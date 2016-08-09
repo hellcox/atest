@@ -1,0 +1,19 @@
+<!-- top -->
+<div class="top">
+    <p class="t_title">登陆</p>
+    <hr class="thr">
+</div>
+<!-- con -->
+<div class="con">
+    <div class="login">
+        <form action="<?php echo arU('Account/login') ?>" method="post">
+            <span>用户名：</span>
+            <input type="text" name="name">
+            <span>密码：</span>
+            <input type="password" name="password">
+            <input type="submit" value="登陆">
+        </form>
+        <a href="<?php echo arU('Account/register'); ?>">注册</a>
+    </div>
+</div>
+<!-- bot -->

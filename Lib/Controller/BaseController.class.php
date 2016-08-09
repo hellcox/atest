@@ -1,15 +1,19 @@
 <?php
 /**
  * Controller
+ * Author:lx
  * Name:Base
- * Auth:lx
  */
 class BaseController extends ArController
 {
 	// 方法:初始化
     public function init()
-    {
-        // echo('BaseController');
+    {	
+    	$isLoginIn = arModule('Lib.Auth')->isLoginIn();
+        if(!$isLoginIn):
+        	$this->redirectError('Account/login','请登录');
+        else:
+        endif;
     }
 
 }
