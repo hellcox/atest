@@ -22,8 +22,10 @@ class BasicInfoController extends BaseController
     // 方法:session
     public function sessionAction()
     {
+        $session = arComp('list.session');
+        $authCode = arComp('list.session')->get('authCode');
         $user = arComp('list.session')->get('user');
-        $this->assign(array('session'=>$user));
+        $this->assign(array('session'=>$session,'user'=>$user,'authCode'=>$authCode));
         $this->display();
     }
 

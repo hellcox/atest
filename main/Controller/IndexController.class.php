@@ -21,6 +21,22 @@ class IndexController extends BaseController
 
     }
 
+    // 方法:验证码验证
+    public function authCodeAction()
+    {
+        $eno = null;
+        if($data = arPost()):
+            $code = arComp('list.session')->get('authCode');
+            if($code === $data['authCode']):
+                $eno = 1;
+            else:
+                $eno = 2;
+            endif;
+        endif;
+        $this->assign(array('eno'=>$eno));
+        $this->display();
+    }
+
     // 方法:test
     public function testAction()
     {

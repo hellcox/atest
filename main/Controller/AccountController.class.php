@@ -92,12 +92,22 @@ class AccountController extends ArController
     }
 
     // 方法:退出
-    public function LoginOutAction()
+    public function loginOutAction()
     {
         $loginOut = arComp('list.session')->set('user',null);
+        $loginOut = arComp('list.session')->flush();
         if(!$loginOut):
             $this->redirectSuccess('Account/login','已安全退出！');
         endif;
     }
 
+    // 方法:验证码
+    public function codeAction()
+    {
+        session_start();
+        $authCode = new AuthCode();
+        $authCode->show();
+        $code = arComp('list.session')->set('authCode',$authCode->getCode());
+
+    }
 }

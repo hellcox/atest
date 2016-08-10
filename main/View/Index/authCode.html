@@ -1,0 +1,18 @@
+<div class="top">
+    <p class="t_title">验证码</p>
+    <hr class="thr">
+</div>
+<div class="con">
+    <?php if($eno==0): ?>
+    <img id="authcode" title="点击刷新" src="<?php echo arU('Account/code'); ?>" onclick="javascript:this.src='<?php echo arU('Account/code'); ?>?tm='+Math.random();">
+    <form action="" method="post">
+        <input type="text" name="authCode">
+        <input type="submit" value="验证">
+    </form>
+	<?php elseif($eno==1): ?>
+		<span>验证成功</span>
+	<?php elseif($eno==2): ?>
+		<span style="color: red;">验证失败</span>
+	<?php endif; ?>
+	<a href="<?php echo arU('Index/authCode'); ?>">返回</a>
+</div>
