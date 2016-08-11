@@ -4,7 +4,7 @@
 </div>
 <div class="con">
     <?php if($eno==0): ?>
-    <img id="authcode" title="点击刷新" src="<?php echo arU('Account/code'); ?>" onclick="javascript:this.src='<?php echo arU('Account/code'); ?>?tm='+Math.random();">
+    <img style="border: 1px #ccc solid;" id="authcode" title="点击刷新" src="<?php echo arU('Account/code'); ?>" onclick="javascript:this.src='<?php echo arU('Account/code'); ?>?tm='+Math.random();">
     <form action="" method="post">
         <input type="text" name="authCode">
         <input type="submit" value="验证">

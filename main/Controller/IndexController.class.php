@@ -24,7 +24,7 @@ class IndexController extends BaseController
     // 方法:验证码验证
     public function authCodeAction()
     {
-        $eno = null;
+        $eno = 0;
         if($data = arPost()):
             $code = arComp('list.session')->get('authCode');
             if($code === $data['authCode']):
